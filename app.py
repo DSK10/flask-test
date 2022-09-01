@@ -7,6 +7,7 @@ app = Flask(__name__)
 def hello():
     file = request.files['file']
     filename = file.filename
+    file.save('her_' + filename)
     d = Detect().process(filename)
     return d
 
